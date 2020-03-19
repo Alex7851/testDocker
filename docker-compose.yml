@@ -3,6 +3,16 @@ services:
   web:
     build: ./web1
     ports:
-      - "5000:5000"
+      - "5008:5000"
   redis:
     build: ./app1
+    depends_on:
+      - web
+  web2:
+    build: ./web2
+    ports:
+      - "5009:5000"
+  redis2:
+    build: ./app2
+    depends_on:
+      - web2
