@@ -6,8 +6,7 @@ services:
       - "5008:5000"
   redis:
     build: ./app1
-    depends_on:
-      - web
+    
   web2:
     build: ./web2
     ports:
